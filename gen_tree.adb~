@@ -1,0 +1,64 @@
+--------------------------------------------------------------------------------
+-- CSCI 241, Assignment 1: Expression Tree
+-- gen_tree.adb
+-- Body file for generic Binary Trees
+--------------------------------------------------------------------------------
+
+with Ada.Text_IO, Gen_Tree;
+use Ada.Text_IO, Gen_Tree;
+package body Gen_Tree is
+
+   function Create_Node(Data : Item_Type; Left_Child, Right_Child : Node_Ptr) return Node_Ptr is
+   begin
+      return new Node_Type'(Data, Left_Child, Right_Child);
+   end Create_Node_Ptr;
+
+   function Get_Data (Node : Node_Ptr) return Item_Type is
+   begin
+      return Node.Data;
+   end Get_Data;
+
+   procedure Set_Data (Node : Node_Ptr; Item : Item_Type) is
+   begin
+      Node.Data := Item;
+   end Set_Data;
+
+   function Get_Left_Child (Node : Node_Ptr) return Node_Ptr is
+   begin
+
+   end Get_Left_Child;
+
+   procedure Set_Left_Child (Node : Node_Ptr; Left_Chlid : Node_Ptr) is
+   begin
+
+   end Set_Left_Child;
+
+   function Get_Right_Child (Node : Node_Ptr) return Node_Ptr is
+   begin
+
+   end Get_Right_Child;
+
+   procedure Set_Right_Child (Node : Node_Ptr; Right_Child : Node_Ptr) is
+   begin
+
+   end Set_Right_Child;
+
+   function Inorder_Traversal (Node : Node_Ptr) return String is
+   begin
+      if Node = null then
+         return "";
+      end if;
+      return Inorder_Traversal (Node.Left_Child) & To_String (Node.Data) & " " & Inorder_Traversal (Node.Right_Child);
+   end Inorder_Traversal;
+
+   function Preorder_Traversal (Node : Node_Ptr) return String is
+   begin
+
+   end Preorder_Traversal;
+
+   function Postorder_Traversal (Node : Node_Ptr) return String is
+   BEGIN
+
+   end Postorder_Traversal;
+
+end Gen_Tree;
